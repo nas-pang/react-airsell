@@ -1,0 +1,10 @@
+version: '3.7'
+
+services:
+  airsells-prod:
+    container_name: airsells-prod
+    build:
+      context: .
+      dockerfile: Dockerfile-prod
+    ports:
+      - '80:80'

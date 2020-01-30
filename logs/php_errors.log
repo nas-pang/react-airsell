@@ -1,0 +1,25 @@
+[09-Jan-2020 05:44:52 UTC] PHP Notice:  Undefined offset: 1 in - on line 10
+[09-Jan-2020 05:44:52 UTC] PHP Stack trace:
+[09-Jan-2020 05:44:52 UTC] PHP   1. {main}() -:0
+[09-Jan-2020 06:03:08 UTC] PHP Notice:  Undefined offset: 1 in - on line 10
+[09-Jan-2020 06:03:08 UTC] PHP Stack trace:
+[09-Jan-2020 06:03:08 UTC] PHP   1. {main}() -:0
+[09-Jan-2020 06:08:54 UTC] PHP Notice:  Undefined offset: 1 in - on line 10
+[09-Jan-2020 06:08:54 UTC] PHP Stack trace:
+[09-Jan-2020 06:08:54 UTC] PHP   1. {main}() -:0
+[09-Jan-2020 06:19:21 UTC] PHP Notice:  Undefined offset: 1 in - on line 10
+[09-Jan-2020 06:19:21 UTC] PHP Stack trace:
+[09-Jan-2020 06:19:21 UTC] PHP   1. {main}() -:0
+[09-Jan-2020 06:22:31 UTC] PHP Notice:  Undefined offset: 1 in - on line 10
+[09-Jan-2020 06:22:31 UTC] PHP Stack trace:
+[09-Jan-2020 06:22:31 UTC] PHP   1. {main}() -:0
+[09-Jan-2020 06:41:53 UTC] PHP Notice:  Undefined offset: 1 in - on line 10
+[09-Jan-2020 06:41:53 UTC] PHP Stack trace:
+[09-Jan-2020 06:41:53 UTC] PHP   1. {main}() -:0
+[09-Jan-2020 06:41:53 UTC] PHP Warning:  mysqli::__construct(): (HY000/2002): Connection refused in - on line 22
+[09-Jan-2020 06:41:53 UTC] PHP Stack trace:
+[09-Jan-2020 06:41:53 UTC] PHP   1. {main}() -:0
+[09-Jan-2020 06:41:53 UTC] PHP   2. mysqli->__construct() -:22
+[09-Jan-2020 12:55:56 UTC] PHP Notice:  Undefined offset: 1 in - on line 10
+[09-Jan-2020 12:55:56 UTC] PHP Stack trace:
+[09-Jan-2020 12:55:56 UTC] PHP   1. {main}() -:0

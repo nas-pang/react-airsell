@@ -1,0 +1,79 @@
+.geosuggest__input {
+  margin: 0em;
+  max-width: 100%;
+  flex: 1 0 auto;
+  outline: none;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  text-align: left;
+  line-height: 1.21428571em;
+  font-family: 'Open Sans', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  padding: 0.67857143em 1em;
+  background: #ffffff;
+  border: 1px solid rgba(34, 36, 38, 0.15);
+  color: rgba(0, 0, 0, 0.87);
+  transition: box-shadow 0.1s ease, border-color 0.1s ease;
+  box-shadow: none;
+  padding-left: 2.67142857em;
+  padding-right: 1em;
+}
+
+.geosuggest__suggests {
+  cursor: auto;
+  position: absolute;
+  display: block;
+  outline: none;
+  top: 100%;
+  left: 0;
+  right: auto;
+  width: 250px;
+  margin: 0em;
+  padding: 0em 0em;
+  background: #ffffff;
+  font-size: 1em;
+  text-shadow: none;
+  text-align: left;
+  box-shadow: 0px 2px 3px 0px rgba(34, 36, 38, 0.15);
+  border: 1px solid rgba(34, 36, 38, 0.15);
+  border-radius: 0.28571429rem;
+  transition: opacity 0.1s ease;
+  z-index: 11;
+  will-change: transform, opacity;
+  margin-top: 0.5em;
+  border-radius: 0.28571429rem;
+}
+
+.geosuggest__suggests--hidden {
+  display: none !important;
+  visibility: hide !important;
+}
+
+.geosuggest__item {
+  position: relative;
+  cursor: pointer;
+  display: block;
+  border: none;
+  height: auto;
+  text-align: left;
+  line-height: 1em;
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 1rem;
+  text-transform: none;
+  font-weight: normal;
+  box-shadow: none;
+  -webkit-touch-callout: none;
+  border-top: 1px solid #fafafa;
+  padding: 0.78571429rem 1.14285714rem !important;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.geosuggest__item:hover {
+  background: rgba(0, 0, 0, 0.05);
+  color: rgba(0, 0, 0, 0.95);
+  z-index: 13;
+}
+
+.map.marker.alternate.icon {
+  z-index: 1;
+}

@@ -1,0 +1,82 @@
+version: '3.7'
+
+services:
+  airsells:
+    container_name: airsells-dev
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - "./:/app"
+    ports:
+      - '3001:3000'
+    environment:
+      - NODE_ENV=development
+      - CHOKIDAR_USEPOLLING=true
+
+  wordpress:
+    image: wordpress:php7.1-fpm-alpine
+    build:
+      context: php-fpm/.
+      dockerfile: ../DockerfileWP
+    environment:
+      WORDPRESS_DB_HOST: mysql
+      WORDPRESS_DB_NAME: local
+      WORDPRESS_DB_USER: root
+      WORDPRESS_DB_PASSWORD: rTr_07555
+      WORDPRESS_TABLE_PREFIX: wp_
+      #PHP_IDE_CONFIG: "serverName=DockerXDebug"
+    restart: "always"
+    depends_on:
+      - mysql
+    links:
+      - mysql:mysql
+    ports:
+      - "9000:9000"
+      - "2222:22"
+    volumes:
+      - "../app/public:/var/www/html"
+      - "./php-fpm:/usr/local/etc"
+      - "./logs:/home"
+
+  mysql:
+    image: mysql:8.0.16
+    command: 
+      - --innodb_use_native_aio=0
+      - --default-authentication-plugin=mysql_native_password
+    environment:
+      MYSQL_DATABASE: local
+      MYSQL_ROOT_PASSWORD: rTr_07555
+    ports:
+      - "3306:3306"
+    volumes:
+      - ../dbdata:/var/lib/mysql
+  phpmyadmin:
+    depends_on:
+      - mysql
+      - nginx
+    image: phpmyadmin/phpmyadmin
+    restart: always
+    ports:
+      - '8080:80'
+    environment:
+      PMA_HOST: mysql
+      MYSQL_ROOT_PASSWORD: rTr_07555
+  nginx:
+    image: nginx:alpine
+    build:
+      context: php-fpm/.
+      dockerfile: ../DockerfileWP
+    depends_on:
+      - wordpress
+      - mysql
+    ports:
+      - '80:80'
+    volumes:
+      - "../app/public:/var/www/html"
+      - "./../nginx:/etc/nginx"
+      - "./../logs/nginx:/var/log/nginx"
+      - "./../nginx/sites:/sites/fastcgi-cache.com/cache"
+    links:
+      - wordpress
+      - mysql

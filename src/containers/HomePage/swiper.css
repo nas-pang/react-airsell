@@ -1,9 +1,0 @@
-@import '../../../node_modules/swiper/css/swiper.min.css';
-
-.swiper-wrapper {
-  padding-top: 10px;
-}
-
-.swiper-button-disabled {
-  display: none;
-}

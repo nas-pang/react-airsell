@@ -16,4 +16,4 @@
 @googleFontFamily  : '@{googleFontName}:@{googleFontSizes}';
 
 @primaryColor: #53a217;
-@pageBackground: #FFF;
+@pageBackground: #eff0f1;

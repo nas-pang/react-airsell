@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Column from 'react-bootstrap/Col';
@@ -185,5 +186,7 @@ const Footer = props => {
     </StyledFooter>
   );
 };
+
+Footer.propTypes = {};
 
 export default Footer;

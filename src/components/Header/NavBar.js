@@ -1,15 +1,11 @@
-/* global google */
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button, Dropdown, Input, Icon } from 'semantic-ui-react';
 import styled from 'styled-components';
 import breakpoint from 'styled-components-breakpoint';
-import Geosuggest from 'react-geosuggest';
 
 import NormalImg from 'components/Img';
 import AirsellsLogoWhite from './airsells-white.png';
-import './geosuggest.css';
 
 const LinkBrand = styled(Link)`
   display: inline-block;
@@ -56,26 +52,27 @@ const NavStyled = styled.nav`
   margin: 4px 0;
   margin-left: -10px;
   overflow-x: scroll;
-  min-height: 32px;
 
   ${breakpoint('md')`
     overflow-x: inherit;
   `}
 `;
 
-export const Nav = ({ menu }) => {
-  const { items } = menu || {};
+export const Nav = () => {
   return (
     <NavStyled id="navigation" role="navigation">
-      {items &&
-        items.map(item => (
-          <NavLink
-            key={`menu-${item.ID}`}
-            to={`/listing-category/${item.post_name}`}
-          >
-            {item.title}
-          </NavLink>
-        ))}
+      <NavLink to="/listing-category/beauty-spas">Beauty & Spas</NavLink>
+      <NavLink to="/listing-category/beauty-spas">
+        Professional Services
+      </NavLink>
+      <NavLink to="/listing-category/beauty-spas">
+        Home & Local Services
+      </NavLink>
+      <NavLink to="/listing-category/beauty-spas">
+        Events & Entertainment
+      </NavLink>
+      <NavLink to="/listing-category/beauty-spas">Food & Farming</NavLink>
+      <NavLink to="/listing-category/beauty-spas">Training & Courses</NavLink>
     </NavStyled>
   );
 };
@@ -104,10 +101,6 @@ const StyledDropdown = styled(Dropdown)`
     color: #888;
   }
 
-  .menu {
-    min-width: max-content !important;
-  }
-
   ${breakpoint('md')`
     border-top-right-radius: 0 !important;
     border-bottom-right-radius: 0 !important;
@@ -115,24 +108,36 @@ const StyledDropdown = styled(Dropdown)`
   `}
 `;
 
-const getOptions = categories => {
-  const options = [{ key: 'all', text: 'All Categories', value: 'all' }];
-
-  if (categories) {
-    categories.forEach(item =>
-      options.push({
-        key: item.slug,
-        text: item.name.replace('&amp;', '&'),
-        value: item.id,
-      })
-    );
-  }
-
-  return options;
-};
-
-export const MainSearch = ({ categories }) => {
-  const options = getOptions(categories);
+export const MainSearch = () => {
+  const options = [
+    { key: 'all', text: 'All Categories', value: 'all' },
+    { key: 'beauty-spas', text: 'Beauty & Spas', value: 'beauty-spas' },
+    {
+      key: 'professional-services',
+      text: 'Professional Services',
+      value: 'professional-services',
+    },
+    {
+      key: 'home-local-services',
+      text: 'Professional Services',
+      value: 'home-local-services',
+    },
+    {
+      key: 'events-entertainment',
+      text: 'Events & Entertainment',
+      value: 'events-entertainment',
+    },
+    {
+      key: 'food-farming',
+      text: 'Food & Farming',
+      value: 'food-farming',
+    },
+    {
+      key: 'training-courses',
+      text: 'Training & Courses',
+      value: 'training-courses',
+    },
+  ];
 
   return (
     <MainSearchInput>
@@ -175,10 +180,8 @@ export const MainSearch = ({ categories }) => {
           style={{ flex: 1 }}
         >
           <Icon name="map marker alternate" />
-          <Geosuggest
-            placeholder="Location"
-            className="ui input"
-            country="CA"
+          <input
+            style={{ borderTopLeftRadius: 0, borderBottomLeftRadius: 0 }}
           />
           <Button type="submit" icon="search" />
         </Input>

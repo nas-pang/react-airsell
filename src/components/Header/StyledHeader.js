@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import theme from 'theme';
 
 export default styled.header`
   color: ${props => props.theme.colors.white};

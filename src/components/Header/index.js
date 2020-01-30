@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
 import capitalize from 'utils/capitalize';
@@ -9,7 +9,7 @@ import Column from 'react-bootstrap/Col';
 import StyledHeader from './StyledHeader';
 import * as Navbar from './NavBar';
 
-const Header = ({ position = 'fixed', headerMenu, categories }) => {
+const Header = ({ position = 'fixed' }) => {
   return (
     <StyledHeader
       id="header-container"
@@ -29,7 +29,7 @@ const Header = ({ position = 'fixed', headerMenu, categories }) => {
             lg={{ span: 8, order: 1 }}
             xs={{ order: 2 }}
           >
-            <Navbar.MainSearch categories={categories} />
+            <Navbar.MainSearch />
           </Column>
           <Column
             xl={{ span: 2, order: 2 }}
@@ -41,7 +41,7 @@ const Header = ({ position = 'fixed', headerMenu, categories }) => {
         </Row>
         <Row>
           <Column xl={{ offset: 2 }}>
-            <Navbar.Nav menu={headerMenu} />
+            <Navbar.Nav />
           </Column>
         </Row>
       </Container>
@@ -57,8 +57,6 @@ Header.propTypes = {
     'static',
     'sticky',
   ]),
-  headerMenu: PropTypes.object,
-  categories: PropTypes.oneOfType([PropTypes.bool, PropTypes.object]),
 };
 
-export default memo(Header);
+export default Header;

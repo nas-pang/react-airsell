@@ -1,0 +1,28 @@
+.area {
+  width: 330px;
+  height: 230px;
+  background-color: white;
+  border: solid 1px;
+  border-color: darkgray;
+  padding: 25px;
+}
+
+.name {
+  color: gray;
+  font-size: medium;
+}
+
+.avatar {
+  width: 55px;
+  height: 55px;
+}
+
+.center {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.fill {
+  flex: 1;
+}

@@ -1,11 +1,11 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Column from 'react-bootstrap/Col';
-import styled from 'styled-components';
-import { List, Header } from 'semantic-ui-react';
-import { Link as LinkNormal } from 'react-router-dom';
+import React from "react";
+
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Column from "react-bootstrap/Col";
+import styled from "styled-components";
+import { List, Header } from "semantic-ui-react";
+import { Link as LinkNormal } from "react-router-dom";
 
 const StyledFooter = styled.footer`
   padding: 70px 0 0 0;
